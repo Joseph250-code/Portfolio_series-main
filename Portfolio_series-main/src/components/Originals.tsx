@@ -1,4 +1,3 @@
-
 import { useLayoutEffect, useRef, useState } from 'react';
 import {
   motion,
@@ -46,8 +45,10 @@ function Intro() {
       />
 
       <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-mist">
-        Three productions from the resume — an AI platform, a payment gateway
-        and a multi-tenant SaaS. Open any title for the full story.
+        A collection of digital products, business tools, healthcare solutions,
+        cybersecurity projects and creative web experiences. Each project
+        represents an idea turned into something functional. Open any title
+        for the full story.
       </p>
 
       <p className="mt-6 hidden text-xs tracking-[0.24em] text-smoke lg:block">
