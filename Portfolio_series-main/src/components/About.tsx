@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { education, profile } from '../data/portfolio';
 import { EASE, SectionHeading, Tilt } from './fx';
@@ -12,7 +11,7 @@ export default function About() {
     },
     {
       k: 'Experience',
-      v: '24 Months',
+      v: '33 Months',
       s: 'Hands-on technical and development experience',
     },
     {
