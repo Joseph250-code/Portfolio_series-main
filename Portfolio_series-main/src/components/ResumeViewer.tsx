@@ -1,7 +1,15 @@
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { achievements, certifications, education, experience, profile, projects, skillCategories } from '../data/portfolio';
 import { EASE, Magnetic, SectionHeading } from './fx';
+
+type ResumeExperience = {
+  company: string;
+  role: string;
+  period: string;
+  points: string[];
+};
 
 /** THE FULL STORY — a designed resume preview plus view / download actions. */
 export default function ResumeSection({ onView }: { onView: () => void }) {
@@ -38,7 +46,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
             <Magnetic className="w-full">
               <a
                 href={profile.resumePdf}
-                download="Sushmita_Dasari_Resume.pdf"
+                download="Joseph_Mbugua_Resume.pdf"
                 data-cursor="link"
                 className="glass flex min-h-12 w-full items-center justify-center gap-2 rounded-md px-6 text-[15px] font-semibold text-bone transition hover:bg-white/15"
               >
@@ -88,6 +96,8 @@ function H({ children }: { children: string }) {
 }
 
 export function ResumeSheet() {
+  const workExperience = experience as ResumeExperience[];
+
   return (
     <article className="relative overflow-hidden rounded-2xl bg-[linear-gradient(180deg,#121218,#0c0c11)] p-6 ring-1 ring-white/10 sm:p-10">
       <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-crimson-2/70 to-transparent" />
@@ -128,7 +138,7 @@ export function ResumeSheet() {
           ))}
 
           <H>Work Experience</H>
-          {experience.map((x) => (
+          {workExperience.map((x) => (
             <div key={x.company}>
               <div className="flex flex-wrap justify-between gap-x-3">
                 <p className="text-sm font-semibold text-bone">
@@ -146,7 +156,7 @@ export function ResumeSheet() {
               </ul>
             </div>
           ))}
-
+          
           <H>Projects</H>
           {projects.map((p) => (
             <div key={p.id} className="mb-3">
